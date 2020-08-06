@@ -1,0 +1,12 @@
+.babelrc
+/reports
+/allure-results
+/node_modules
+*.jpg
+*.png
+/screenShots
+*.zip
+*.tgz
+*.txt
+*.log
+*.ipa
