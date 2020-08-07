@@ -8,7 +8,7 @@ module.exports = {
         
     get passwordInput()
     { 
-        return $('//*[@type="XCUIElementTypeSecureTextField"]') 
+        return $('//*[@type="XCUIElementTypeSecureTextField"]/..') 
     },
 
     get loginButton()
@@ -19,6 +19,16 @@ module.exports = {
     get allowButton()
     {
         return $('[name="Allow"]')
+    },
+
+    get gotItButton()
+    {
+        return $('[name="GOT IT"]')
+    },
+
+    get micCameraOkButton()
+    {
+        return $('[name="OK"]')
     }
 
 }

@@ -4,6 +4,8 @@ var chai= require('chai')
 
 const { join } = require('path');
 var loginPage=require('./test/pages/LoginPage')
+var homePage=require('./test/pages/HomePage')
+var createRequestPage= require('./test/pages/CreateRequestPage')
 
 exports.config = {
     //
@@ -89,7 +91,7 @@ exports.config = {
             bundleId:"au.com.languageloop.litest.VideoLoop",
             // Read the reset strategies very well, they differ per platform, see
             // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-            //'appium:noReset': true,
+            noReset: false,
             //'appium:newCommandTimeout': 240,
         },
     ],
@@ -241,6 +243,10 @@ exports.config = {
         
         // Page object file variables
         global.loginPage=loginPage
+        global.homePage= homePage
+        global.createRequestPage= createRequestPage
+
+        //download the latest app
         var execSync = require('child_process').execSync;
         var user = execSync('curl "https://li-test.languageloop.com.au/NativeAppBuilder/rest/Download/Ipa?AppKey=ee106a1d-dc64-4203-a338-3f03468e7daa" --output VideoLoop.ipa');
         var exec = require('child_process').exec;
